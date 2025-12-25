@@ -1,1 +1,16 @@
-<p>Hello</p>
+
+<form action="/ability" method="get">
+    <label for="search-box">Search:</label>
+    <input type="text" id="search" name="q">
+    <input type="submit" value="search">
+</form>
+
+
+<% if (rowMaybe.fields != undefined) { %>
+    <p>Ability name: <%= rowMaybe.fields.Name %> </p>
+    <p> Row ID: <%= rowMaybe.row_id %> </p>
+    <p>Icon ID: <%= rowMaybe.fields.Icon.id %> </p>
+    <p>Icon path:  <%= rowMaybe.fields.Icon.path %> </p>
+<% } else{ %>
+    <p> No results </p>
+<% } %>
